@@ -6,11 +6,17 @@ Pod::Spec.new do |s|
   s.license = { :type => 'Commercial', :text => "Copyright © Evgen Bodunov" }
   s.author = { "Evgen Bodunov" => "evgen@getyourmap.com" }
   s.social_media_url = "http://twitter.com/GLMapFramework"
+  s.documentation_url = "https://getyourmap.com/docs/objc/api/#{s.version.to_s}/"
 
   s.platform = :ios
   s.ios.deployment_target = '8.0'
 
-  s.dependency "GLMap+DynamicLib"
+  s.source = {
+    :git => "https://github.com/GLMap/GLMapPod.git", 
+    :tag => "#{s.version}"
+  }
+
+  s.dependency "GLMap+DynamicLib", "= #{s.version}"
   s.dependency "GLMap+DefaultStyle"
   s.dependency "GLMap+WorldMap"
 end
