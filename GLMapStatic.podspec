@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "GLMapStatic"
-  s.version = "0.9.3"
+  s.version = "0.9.4"
   s.summary = "GLMap is a fast and customizable offline vector map"
   s.homepage = "https://getyourmap.com"
   s.license = { :type => 'Commercial', :text => "Copyright © Evgen Bodunov" }
