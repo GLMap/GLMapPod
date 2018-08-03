@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "GLMapStatic"
-  s.version = "0.9.9"
+  s.version = "1.0.0"
   s.summary = "GLMap is a fast and customizable offline vector map"
   s.homepage = "https://getyourmap.com"
   s.license = { :type => 'Commercial', :text => "Copyright © Evgen Bodunov" }
@@ -12,11 +12,15 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source = {
-    :git => "https://github.com/GLMap/GLMapPod.git", 
-    :tag => "#{s.version}"
+    :http => "https://getyourmap.com/account/download/GLMapStatic-#{s.version.to_s}.zip", 
+    :flatten => true 
   }
 
-  s.dependency "GLMap+StaticLib", "= #{s.version}"
+  s.vendored_frameworks = "GLMap.framework"
+
+  s.framework = ["Accelerate", "CoreLocation"]
+  s.library = ["z", "bz2", "c++"]
+
   s.dependency "GLMap+DefaultStyle"
   s.dependency "GLMap+WorldMap"
 end
